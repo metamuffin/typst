@@ -702,6 +702,7 @@ fn format_display_string(
             content = match fmt {
                 Formatting::Bold => content.strong(),
                 Formatting::Italic => content.emph(),
+                Formatting::Smallcaps => content.styled(TextElem::set_smallcaps(true)),
                 Formatting::Link(link) => {
                     LinkElem::new(Destination::Url(link.as_str().into()).into(), content)
                         .pack()
